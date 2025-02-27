@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WareSpace - Small Warehouse Space for Rent</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        .background-image {
+            background-image: url('./images/Background\ Image.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .background-image {
+                background-attachment: scroll;
+            }
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .carousel-button.prev {
+            left: 0.5rem;
+        }
+
+        .carousel-button.next {
+            right: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="min-h-screen flex flex-col">
+        <header
+            class="py-2 px-4 md:px-8 flex flex-row justify-between items-center w-full bg-white border-b-2 border-b-[#102442] sticky top-0 z-10">
+            <div class="flex items-center">
+                <img src="./images/f6c5022c-009e-4406-8b71-d2b1233f75cb 1.jpg" alt="WareSpace logo" class="max-h-12">
+            </div>
+            <div class="flex flex-row items-center gap-2 md:gap-8 w-full md:w-auto justify-end">
+                <a href="tel:+470-518-5965" class="flex flex-row gap-2 items-center hidden md:flex">
+                    <img src="./images/phone-svgrepo-com 2.png" alt="Phone icon" class="w-5 h-5">
+                    <span class="text-[#102442] font-bold">470-518-5965</span>
+                </a>
+                <button type="button"
+                    class="bg-[#00AA6C] text-white py-2 px-4 md:py-4 md:px-8 rounded-md text-sm md:text-base hidden md:block hover:bg-[#008c56] transition-colors">
+                    Book a Tour Today
+                </button>
+
+                <div class="flex items-center gap-2 md:hidden w-full justify-end">
+                    <a href="tel:+470-518-5965" class="flex flex-row gap-2 items-center md:flex">
+                        <img src="./images/phone-svgrepo-com 2.png" alt="Phone icon" class="w-5 h-5">
+                        <span class="text-[#102442] font-bold text-sm">470-518-5965</span>
+                    </a>
+                    <button id="menuToggle" class="p-1 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 background-image md:py-8 md:px-8 lg:px-12">
+            <div class="background-image md:hidden block w-full h-[32vh] p-8">
+                <div
+                    class="carousel relative w-full h-full flex justify-center items-center rounded-lg border-2 border-[#102442]">
+                    <div class="carousel-track flex" id="carouselTrack">
+                        <div class="carousel-slide flex items-center justify-center w-full">
+                            <img src="./images/scene1.png" class="w-full h-full object-contain"
+                                alt="Warehouse interior">
+                        </div>
+                        <div class="carousel-slide flex items-center justify-center w-full">
+                            <img src="./images/scene 2.png" class="w-full h-full object-contain" alt="Warehouse space">
+                        </div>
+                        <div class="carousel-slide flex items-center justify-center w-full">
+                            <img src="./images/scene3.png" class="w-full h-full object-contain" alt="Storage area">
+                        </div>
+                        <div class="carousel-slide flex items-center justify-center w-full">
+                            <img src="./images/scene 4.png" class="w-full h-full object-contain" alt="Loading dock">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev" id="prevButton">❮</button>
+                    <button class="carousel-button next" id="nextButton">❯</button>
+                </div>
+            </div>
+
+            <div
+                class="bg-[#E6F4EB] py-4 md:py-8 px-4 md:px-12 md:rounded-lg md:border-2 md:border-[#102442] max-w-6xl mx-auto">
+                <div class="w-full h-full flex flex-col lg:flex-row gap-6 md:gap-8">
+                    <div class="flex-1 lg:flex-[3] flex flex-col">
+                        <div
+                            class="flex items-center gap-2 bg-white rounded-md px-2 self-start border border-[#102442]">
+                            <img src="./images/g 1.png" alt="Google logo" class="w-4 md:w-5 h-4 md:h-5">
+                            <div class="flex items-center">
+                                <span class="text-yellow-400 text-lg md:text-xl">★★★★</span>
+                                <div class="relative inline-block">
+                                    <span class="text-gray-300 text-lg md:text-xl">★</span>
+                                    <span
+                                        class="absolute top-0 left-0 text-yellow-400 text-lg md:text-xl overflow-hidden"
+                                        style="width: 80%;">★</span>
+                                </div>
+                            </div>
+                            <span class="text-gray-700 text-xs font-medium">(4.8/5.0)</span>
+                        </div>
+
+                        <div class="flex flex-col my-4 md:my-8">
+                            <h1 class="text-2xl md:text-4xl font-bold">Small warehouse space for rent in <span
+                                    class="text-[#00AA6C]">Upper West Side, Atlanta, GA</span></h1>
+
+                            <div class="flex flex-col gap-3 md:gap-4 text-xs md:text-sm mt-4">
+                                <div class="flex items-start gap-3 md:gap-4">
+                                    <img src="./images/calender.png" alt="Calendar icon"
+                                        class="w-8 h-8 mt-1 border-2 border-[#00AA6C] rounded-md">
+                                    <div class="flex flex-col">
+                                        <h2 class="font-bold text-sm md:text-md">Flexible spaces & leases</h2>
+                                        <p>Leases as short as 6 months. Upscale or downscale anytime!</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3 md:gap-4">
+                                    <img src="./images/luggage.png" alt="Luggage icon"
+                                        class="w-8 h-8 mt-1 border-2 border-[#00AA6C] rounded-md">
+                                    <div class="flex flex-col">
+                                        <h2 class="font-bold text-sm md:text-md">All-inclusive warehousing</h2>
+                                        <p>Rental includes racking, equipment, loading docks & more</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3 md:gap-4">
+                                    <img src="./images/key.png" alt="Key icon"
+                                        class="w-8 h-8 mt-1 border-2 border-[#00AA6C] rounded-md">
+                                    <div class="flex flex-col">
+                                        <h2 class="font-bold text-sm md:text-md">Immediate availability</h2>
+                                        <p>Move in today!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:grid grid-cols-2 hidden md:grid-cols-4 gap-2 md:gap-4">
+                            <img src="./images/scene1.png"
+                                class="rounded-lg border border-[#102442] w-full h-auto object-cover"
+                                alt="Warehouse interior">
+                            <img src="./images/scene 2.png"
+                                class="rounded-lg border border-[#102442] w-full h-auto object-cover"
+                                alt="Warehouse space">
+                            <img src="./images/scene3.png"
+                                class="rounded-lg border border-[#102442] w-full h-auto object-cover"
+                                alt="Storage area">
+                            <img src="./images/scene 4.png"
+                                class="rounded-lg border border-[#102442] w-full h-auto object-cover"
+                                alt="Loading dock">
+                        </div>
+
+                        <button type="button"
+                            class="bg-[#00AA6C] text-white p-2 rounded-md hover:bg-[#008c56] transition-colors text-sm md:text-base md:hidden">
+                            Ask about a space
+                        </button>
+
+                        <p class="text-[#00AA6C] font-bold mt-4 md:mt-8 text-xs md:text-sm">
+                            200-2,000 sq ft starting as low as $625/month
+                        </p>
+                    </div>
+
+                    <form action=""
+                        class="bg-white lg:flex-[2] rounded-lg p-4 md:p-6 flex flex-col gap-3 md:gap-4 border-2 border-[#00AA6C]">
+                        <h2 class="text-xl md:text-2xl font-bold text-[#102442]">Visit for an in-person tour</h2>
+
+                        <div class="flex gap-3 items-center">
+                            <img src="./images/Frame 366.png" alt="Cashana or Khadijah illustration"
+                                class="w-12 md:w-16 h-auto">
+                            <p class="text-xs md:text-sm italic text-gray-600">
+                                Cashana or Khadijah will answer your questions and find you a space that meets your
+                                needs. No commitment necessary!
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col gap-2 mt-1 md:mt-2">
+                            <input type="text" name="firstName" id="firstName" placeholder="First name here"
+                                class="border border-[#DCDCDC] p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00AA6C] text-xs md:text-sm">
+                            <input type="text" name="lastName" id="lastName" placeholder="Last name here"
+                                class="border border-[#DCDCDC] p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00AA6C] text-xs md:text-sm">
+                            <input type="email" name="email" id="email" placeholder="Email here"
+                                class="border border-[#DCDCDC] p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00AA6C] text-xs md:text-sm">
+                            <input type="tel" name="phone" id="phone"
+                                placeholder="Phone number (Just so we can remind you of your appt)"
+                                class="border border-[#DCDCDC] p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00AA6C] italic text-xs md:text-sm">
+                        </div>
+
+                        <div class="flex flex-col mt-2 md:mt-4 gap-2">
+                            <button type="button"
+                                class="bg-[#00AA6C] text-white p-2 rounded-md hover:bg-[#008c56] transition-colors text-sm md:text-base">
+                                Step 2: Find a time that works
+                            </button>
+                            <a href="tel:+415-985-0940" class="text-xs md:text-sm font-bold text-[#102442]">
+                                Questions? Give us a call: <span
+                                    class="text-[#00AA6C] underline italic">415-985-0940</span>
+                            </a>
+                        </div>
+
+                        <button
+                            class="bg-[#E6F4EB] px-3 md:px-4 py-1 self-start rounded-full text-xs md:text-sm mt-2 md:mt-4 hover:bg-[#d1e8d8] transition-colors">
+                            Looking for a job? Click here.
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('carouselTrack');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            let slideIndex = 0;
+            const slideWidth = 100;
+
+            function updateCarousel() {
+                track.style.transform = `translateX(-${slideIndex * slideWidth}%)`;
+            }
+
+            nextButton.addEventListener('click', () => {
+                if (slideIndex < 3) {
+                    slideIndex++;
+                } else {
+                    slideIndex = 0;
+                }
+                updateCarousel();
+            });
+
+            prevButton.addEventListener('click', () => {
+                if (slideIndex > 0) {
+                    slideIndex--;
+                } else {
+                    slideIndex = 3;
+                }
+                updateCarousel();
+            });
+        });
+    </script>
+</body>
+
+</html>
