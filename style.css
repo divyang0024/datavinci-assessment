@@ -1,0 +1,47 @@
+.background-image {
+  background-image: url("./images/Background\ Image.png");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .background-image {
+    background-attachment: scroll;
+  }
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-button.prev {
+  left: 0.5rem;
+}
+
+.carousel-button.next {
+  right: 0.5rem;
+}
